@@ -1,0 +1,15 @@
+/* STICKY NAVBAR (for partial nav-bar hiding when scrolling) */
+.sticky-nav{
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 500 !important;
+}
+
+.sticky-nav-temp {
+  width: 100%;
+  z-index: 500 !important;
+  position: relative !important;
+}
+
+/* END STICKY NAVBAR */
