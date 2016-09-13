@@ -1,11 +1,14 @@
-<nav class="navbar navbar-default navbar-static-top" style="margin-bottom:0px !important; padding-top:10px; z-index: 1000;">
+<nav class="navbar navbar-default navbar-static-top" style="margin-bottom:0px !important; height:130px; padding-top:10px; z-index: 1000;">
   <div class="container-fluid">
     <div class="navbar-header">
-      <div class="navbar-brand" style="padding:0; position:absolute; margin-left:48%; margin-right:48%">
+      <div class="navbar-brand" style="padding:0">
         <a href="/">
-          <!--<img src="/path/to/logo" height="80" style="margin-top:-15px">-->
+          <%= image_tag 'OMLogo.png', :class => 'logo', :alt => "OysterMom Logo" %>
         </a>
       </div>
+    </div>
+    <div class="nav navbar-nav navbar-right" style="padding-right:10px">
+      <%= button_to "Admin Login", "#", :class => "btn btn-primary" %>
     </div>
   </div>
 </nav>

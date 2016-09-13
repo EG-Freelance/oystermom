@@ -12,4 +12,22 @@
   position: relative !important;
 }
 
+.logo {
+  height: 120px;
+  width: 160px;
+}
+
+#footer {
+  height: 100px;
+  background-color: #cccccc;
+  width: 100%;
+  border-top:1px solid black;
+  bottom: 0px;
+  position: absolute;
+  text-align: center;
+}
+
+.sm-logo {
+  height:80px;
+}
 /* END STICKY NAVBAR */

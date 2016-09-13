@@ -1,1 +1,33 @@
-Welcome home
+<div class="container-fluid">
+  <div class="row" style="width:100%">
+    <div style="width:500px; float:right;">
+      <div id="carousel-example-generic" class="carousel slide">
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" style="width:500px; height:367px">
+          <div class="item active">
+            <%= image_tag 'OMTagline.png', :style => "border-radius:75px; border: 1px solid navy; height:365px", :alt => "OysterMom Tagline" %>
+          </div>
+
+          <div class="item">
+            <%= image_tag 'OMOysters.jpg', :style => "height:367px; border-radius:75px", :alt => "OysterMom Oysters" %>
+          </div>
+
+          <div class="item" style="border-radius:75px">
+            <%= image_tag 'OMFarm.jpg', :style => "height:367px; border-radius:75px", :alt => "OysterMom Farm" %>
+            <div class="carousel-caption">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div style="margin-right:550px">
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    </div>
+</div>
+
+<script>
+  $('.carousel').carousel({
+    interval: 5000
+  });
+</script>
