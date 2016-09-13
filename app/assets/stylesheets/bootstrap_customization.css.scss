@@ -23,9 +23,11 @@
   width: 100%;
   border-top:1px solid black;
   bottom: 0px;
-  position: absolute;
+  position: fixed;
   text-align: center;
+  z-index:1000;
 }
+
 
 .sm-logo {
   height:80px;
