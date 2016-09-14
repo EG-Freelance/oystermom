@@ -18,6 +18,7 @@ class PagesController < ApplicationController
   
   def gallery
     @media_files = MediaFile.all
+    @media_file = MediaFile.new
   end
   
   def blog
