@@ -16,12 +16,12 @@ class MediaFilesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_page
-      @page = Page.find(params[:id])
+    def set_media_file
+      @media_file = MediaFile.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def page_params
+    def media_file_params
       params.require(:media_file).permit(:image, :video, :name)
     end
 end
