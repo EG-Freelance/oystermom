@@ -17,7 +17,7 @@ class PagesController < ApplicationController
   end
   
   def gallery
-    @posts = Post.where(type: "gallery")
+    @media_files = MediaFile.all
   end
   
   def blog
