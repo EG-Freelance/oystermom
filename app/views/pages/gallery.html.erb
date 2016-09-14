@@ -23,8 +23,8 @@
 
 <div id="links" class="links">
   <% @media_files.each do |m| %>
-    <a href="<%= m.url %>" title="<%= m.image_file_name || m.video_file_name %>" data-gallery="">
-      <img src="<%= m.url %>" alt="<%= m.imagee_file_name || m.video_file_name %>" class="img-thumbnail">
+    <a href="<%= m.image.url == "/images/original/missing.png" ? m.video.url : m.image.url %>" title="<%= m.image_file_name || m.video_file_name %>" data-gallery="">
+      <img src="<%= m.image.url == "/images/original/missing.png" ? m.video.url : m.image.url %>" alt="<%= m.imagee_file_name || m.video_file_name %>" class="img-thumbnail">
     </a>
   <% end %>
 </div>
