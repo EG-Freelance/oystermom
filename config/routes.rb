@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   post '/gallery' => 'media_files#create'
 
   resources :posts
+  resources :media_files
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
