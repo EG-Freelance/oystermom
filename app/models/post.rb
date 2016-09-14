@@ -1,4 +1,3 @@
 class Post < ActiveRecord::Base
-  has_attached_file :image
-  has_attached_file :video
+  has_many :media_files
 end

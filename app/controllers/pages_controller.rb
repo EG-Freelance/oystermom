@@ -20,6 +20,10 @@ class PagesController < ApplicationController
     @posts = Post.where(type: "gallery")
   end
   
+  def blog
+    @posts = Post.where(type: "blog")
+  end
+  
   def order
   end
   
