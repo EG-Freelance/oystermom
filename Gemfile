@@ -18,6 +18,9 @@ end
 # Use paperclip for attaching images and videos to posts
 gem 'paperclip', "~> 5.0.0"
 
+# Use blue-imp for photo/video gallery
+gem 'blueimp-gallery'
+
 # Use aws-sdk to connect to S3 bucket
 gem 'aws-sdk'
 

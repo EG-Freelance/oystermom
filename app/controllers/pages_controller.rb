@@ -6,6 +6,25 @@ class PagesController < ApplicationController
   def index
     @pages = Page.all
   end
+  
+  def location
+  end
+  
+  def contact
+  end
+  
+  def oysterstory
+  end
+  
+  def gallery
+    @posts = Post.where(type: "gallery")
+  end
+  
+  def order
+  end
+  
+  def team
+  end
 
   # GET /pages/1
   # GET /pages/1.json

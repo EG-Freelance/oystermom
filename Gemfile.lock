@@ -46,6 +46,8 @@ GEM
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    blueimp-gallery (2.11.0.1)
+      railties (>= 3.1.0)
     builder (3.2.2)
     byebug (9.0.5)
     climate_control (0.0.3)
@@ -193,6 +195,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk
+  blueimp-gallery
   byebug
   coffee-rails (~> 4.1.0)
   devise

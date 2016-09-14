@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.css">
+<link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery-indicator.css">
+<script src="http://blueimp.github.io/Gallery/js/blueimp-helper.js"></script>
+<script src="http://blueimp.github.io/Gallery/js/blueimp-gallery.js"></script>
+<script src="http://blueimp.github.io/Gallery/js/blueimp-gallery-fullscreen.js"></script>
+<script src="http://blueimp.github.io/Gallery/js/blueimp-gallery-indicator.js"></script>
+
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+  <div class="slides"></div>
+  <h3 class="title"></h3>
+  <a class="prev">‹</a>
+  <a class="next">›</a>
+  <a class="play-pause"></a>
+  <ol class="indicator"></ol>
+</div>
+
+<div id="links" class="links">
+  <a href="http://dl36mmdz94630.cloudfront.net/uploads/assets/images/000/007/158/large/Portal_Gun.137.jpg?1388772938" title="Photo 1" data-gallery="">
+    <img src="http://dl36mmdz94630.cloudfront.net/uploads/assets/images/000/007/158/large/Portal_Gun.137.jpg?1388772938" alt="Photo 1" class="img-thumbnail">
+  </a>
+  <a href="http://www.gengame.net/wp-content/uploads/2013/01/BioShock-Infinite-Columbia.jpg" title="Photo 2" data-gallery="">
+    <img src="http://www.gengame.net/wp-content/uploads/2013/01/BioShock-Infinite-Columbia.jpg" alt="Photo 2" class="img-thumbnail">
+  </a>
+  <a href="http://vignette4.wikia.nocookie.net/half-life/images/4/4d/Glados_new_body.jpg/revision/latest?cb=20110804222433&path-prefix=en" title="Photo 3" data-gallery="">
+    <img src="http://vignette4.wikia.nocookie.net/half-life/images/4/4d/Glados_new_body.jpg/revision/latest?cb=20110804222433&path-prefix=en" alt="Photo 3" class="img-thumbnail">
+  </a>
+</div>
+
+<script>
+document.getElementById('links').onclick = function (event) {
+    event = event || window.event;
+    var target = event.target || event.srcElement,
+        link = target.src ? target.parentNode : target,
+        options = {
+            index: link,
+            event: event
+        },
+        links = this.getElementsByTagName('a');
+    blueimp.Gallery(links, options);
+};
+</script>

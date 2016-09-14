@@ -3,6 +3,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#index"
   post "/" => "pages#index"
+  get "/location" => "pages#location", :as => "location"
+  get "/gallery" => "pages#gallery", :as => "gallery"
+  get "/order" => "pages#order", :as => "order"
+  get "/team" => "pages#team", :as => "team"
+  get "/oysterstory" => "pages#oysterstory", :as => "oysterstory"
+  get "/contact" => "pages#contact", :as => "contact"
 
   resources :posts
   
