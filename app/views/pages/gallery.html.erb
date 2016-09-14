@@ -5,6 +5,13 @@
 <script src="http://blueimp.github.io/Gallery/js/blueimp-gallery-fullscreen.js"></script>
 <script src="http://blueimp.github.io/Gallery/js/blueimp-gallery-indicator.js"></script>
 
+<div width="100%" style="position:relative">
+  <h1 style="font-family: oswald;text-align:center"><b><u>Media Gallery</u></b></h1>
+  <% if user_signed_in? && current_user.admin? %>
+    <button style="position:absolute; right:10px; top:0" class="btn btn-primary" data-toggle="modal" data-target="#upload">Upload Media</button>
+  <% end %>
+</div>
+
 <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
   <div class="slides"></div>
   <h3 class="title"></h3>
@@ -15,15 +22,32 @@
 </div>
 
 <div id="links" class="links">
-  <a href="http://dl36mmdz94630.cloudfront.net/uploads/assets/images/000/007/158/large/Portal_Gun.137.jpg?1388772938" title="Photo 1" data-gallery="">
-    <img src="http://dl36mmdz94630.cloudfront.net/uploads/assets/images/000/007/158/large/Portal_Gun.137.jpg?1388772938" alt="Photo 1" class="img-thumbnail">
-  </a>
-  <a href="http://www.gengame.net/wp-content/uploads/2013/01/BioShock-Infinite-Columbia.jpg" title="Photo 2" data-gallery="">
-    <img src="http://www.gengame.net/wp-content/uploads/2013/01/BioShock-Infinite-Columbia.jpg" alt="Photo 2" class="img-thumbnail">
-  </a>
-  <a href="http://vignette4.wikia.nocookie.net/half-life/images/4/4d/Glados_new_body.jpg/revision/latest?cb=20110804222433&path-prefix=en" title="Photo 3" data-gallery="">
-    <img src="http://vignette4.wikia.nocookie.net/half-life/images/4/4d/Glados_new_body.jpg/revision/latest?cb=20110804222433&path-prefix=en" alt="Photo 3" class="img-thumbnail">
-  </a>
+  <% @media_files.each do |m| %>
+    <a href="<%= m.url %>" title="<%= m.image_file_name || m.video_file_name %>" data-gallery="">
+      <img src="<%= m.url %>" alt="<%= m.imagee_file_name || m.video_file_name %>" class="img-thumbnail">
+    </a>
+  <% end %>
+</div>
+
+<!-- Media Upload Modal -->
+<div id="upload" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Upload Media File</h4>
+      </div>
+      <div class="modal-body">
+        <%= render 'pages/upload' %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 <script>

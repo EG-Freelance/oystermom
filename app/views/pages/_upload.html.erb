@@ -1,0 +1,37 @@
+<%= form_for('media_type', multipart: true) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label 'Media-Type' %><br>
+    <%= f.select 'media_type', options_for_select(['Image', 'Video']) %>
+  </div>
+  <div class="field" id="image_field">
+    <%= f.label :image %>
+    <%= f.file_field :image, :style => "width: 75%" %>
+  </div>
+  <div class="field" id="video_field">
+    <%= f.label :video %>
+    <%= f.file_field :video, :style => "width: 75%" %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Upload', :class => 'btn btn-primary', :style => "width:75px !important" %>
+  </div>
+<% end %>
+
+<script>
+  function mediaSelector(){
+    if( $('#media_type_media_type').val() == "Image"){
+      $('#image_field').show();
+      $('#video_field').hide();
+      $('#media_type_video').val(null);
+    }else{
+      $('#image_field').hide();
+      $('#video_field').show();
+      $('#media_type_image').val(null);
+    }
+  }
+  $(document).ready(mediaSelector);
+  $('#media_type_media_type').change(mediaSelector);
+</script>

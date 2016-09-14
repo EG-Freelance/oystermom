@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   get "/team" => "pages#team", :as => "team"
   get "/oysterstory" => "pages#oysterstory", :as => "oysterstory"
   get "/contact" => "pages#contact", :as => "contact"
-  get "/blog" => "pages#blog", :as => "blog"
+  #get "/blog" => "pages#blog", :as => "blog"
+  
+  post '/gallery' => 'media_files#create'
 
   resources :posts
   
