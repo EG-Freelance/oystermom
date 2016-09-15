@@ -3,7 +3,6 @@ class CreateMediaFiles < ActiveRecord::Migration
     create_table :media_files do |t|
       t.belongs_to :post
       
-      t.name
       t.timestamps
     end
     

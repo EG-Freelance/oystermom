@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160914183245) do
+ActiveRecord::Schema.define(version: 20160915131649) do
 
   create_table "media_files", force: :cascade do |t|
     t.integer  "post_id"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20160914183245) do
     t.string   "video_content_type"
     t.integer  "video_file_size"
     t.datetime "video_updated_at"
+    t.string   "name"
   end
 
   create_table "pages", force: :cascade do |t|
