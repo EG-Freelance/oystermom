@@ -5,7 +5,7 @@
   </div>
   <div class="field">
     <%= f.label 'Media-Type' %><br>
-    <%= f.select 'media_type', options_for_select(['Image', 'Video']) %>
+    <%= select_tag :media_type, options_for_select(['Image', 'Video']), :id => "media_file_media_type" %>
   </div>
   <div class="field" id="image_field">
     <%= f.label :image %>
@@ -22,16 +22,16 @@
 
 <script>
   function mediaSelector(){
-    if( $('#media_type_media_type').val() == "Image"){
+    if( $('#media_file_media_type').val() == "Image"){
       $('#image_field').show();
       $('#video_field').hide();
-      $('#media_type_video').val(null);
+      $('#media_file_video').val(null);
     }else{
       $('#image_field').hide();
       $('#video_field').show();
-      $('#media_type_image').val(null);
+      $('#media_file_image').val(null);
     }
   }
   $(document).ready(mediaSelector);
-  $('#media_type_media_type').change(mediaSelector);
+  $('#media_file_media_type').change(mediaSelector);
 </script>
