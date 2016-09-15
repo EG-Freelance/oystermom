@@ -87,7 +87,10 @@ input:focus, textarea:focus {
 
 /* BLUEIMP */
 .img-thumbnail {
-  height:300px;
-  width:300px;
+  height: 300px !important;
+  width: 300px !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 /* END BLUEIMP */

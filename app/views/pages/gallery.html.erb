@@ -23,8 +23,9 @@
 
 <div id="links" class="links">
   <% @media_files.each do |m| %>
-    <a href="<%= m.image.url == "/images/original/missing.png" ? m.video.url : m.image.url %>" title="<%= m.image_file_name || m.video_file_name %>" data-gallery="">
-      <img src="<%= m.image.url == "/images/original/missing.png" ? m.video.url : m.image.url %>" alt="<%= m.image_file_name || m.video_file_name %>" class="img-thumbnail">
+    <a href="<%= m.image.url %>" title="<%= m.image_file_name %>" data-gallery="">
+      <div style="background:url(<%= m.image.url %>)" class="img-thumbnail"></div>
+      <!--<img src="http://apod.nasa.gov/apod/image/1306/m31_comolli_2193.jpg" alt="test" class="img-thumbnail">-->
     </a>
   <% end %>
 </div>
@@ -50,16 +51,16 @@
   </div>
 </div>
 
-<script>
-document.getElementById('links').onclick = function (event) {
+<script> // blueimp controls
+  document.getElementById('links').onclick = function (event) {
     event = event || window.event;
     var target = event.target || event.srcElement,
         link = target.src ? target.parentNode : target,
         options = {
-            index: link,
-            event: event
+          index: link,
+          event: event
         },
         links = this.getElementsByTagName('a');
     blueimp.Gallery(links, options);
-};
+  };
 </script>
