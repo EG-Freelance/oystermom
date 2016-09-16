@@ -7,8 +7,8 @@ Rails.application.configure do
     s3_region: "us-east-1",
     s3_credentials: {
       bucket: "oystermom-media",
-      access_key_id: "AKIAJECKV4TRA2NHAFUA",
-      secret_access_key: "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",
+      access_key_id: "AKIAJCFBGRN36NGQA4MQ",
+      secret_access_key: "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",
       }
     }
   
