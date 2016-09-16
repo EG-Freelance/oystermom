@@ -17,6 +17,7 @@ end
 
 # Use paperclip for attaching images and videos to posts
 gem 'paperclip', "~> 5.0.0"
+gem 'paperclip-av-transcoder'
 
 # Use blue-imp for photo/video gallery
 gem 'blueimp-gallery'
