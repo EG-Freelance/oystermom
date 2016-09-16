@@ -24,7 +24,7 @@
 <div id="links" class="links">
   <% @media_files.each do |m| %>
     <a href="<%= m.image.url %>" title="<%= m.image_file_name %>" data-gallery="">
-      <!-- Use transparent swatch as src for thumbnail so that cover styling is used-->
+      <!-- Use transparent swatch as src for thumbnail so that cover styling is used -->
       <img style="background:url(<%= m.image.url %>);" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/I_am_Communist.svg/800px-I_am_Communist.svg.png" alt="test" class="img-thumbnail">
     </a>
   <% end %>
