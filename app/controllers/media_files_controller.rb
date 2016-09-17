@@ -1,6 +1,5 @@
 class MediaFilesController < ApplicationController
   def create
-    puts media_file_params
     @media_file = MediaFile.new(media_file_params)
     if @media_file.save
       respond_to do |format|
