@@ -19,8 +19,11 @@ end
 gem 'paperclip', "~> 5.0.0"
 gem 'paperclip-av-transcoder'
 
-# Use blue-imp for photo/video gallery
+# Use blue-imp for photo gallery
 gem 'blueimp-gallery'
+
+# Use videojs for video gallery
+gem 'videojs_rails'
 
 # Use aws-sdk to connect to S3 bucket
 gem 'aws-sdk'
