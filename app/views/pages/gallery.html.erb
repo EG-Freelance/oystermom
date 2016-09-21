@@ -75,20 +75,21 @@
     </div>
     <% @media_files.where.not(video_file_name: nil).each do |v| %>
       <span class="vid-link" id='<%= "vid-link-#{v.id}" %>'>
-        <%= videojs_rails sources: { mp4: v.video.url }, controls: true, :class => "vid" %>
-        <% if user_signed_in? && current_user.admin? %>
-          <%= link_to "X", media_file_path(v), method: :delete, :class => "remove-vid", :id => "remove-vid-#{v.id}", :hidden => true, data: { confirm: "Are you sure you want to delete this video?" } %>
-          <script>
-            function removeVid(){
-              $('<%= "#vid-link-#{v.id}" %>').hover(function(){
-                $('<%= "#remove-vid-#{v.id}" %>').prop('hidden', false);
-              }, function(){
-                $('<%= "#remove-vid-#{v.id}" %>').prop('hidden', true);
-              });
-            }
-  
-            $(document).ready(removeVid);
-          </script>
+        <%= videojs_rails sources: { mp4: v.video.url }, controls: true, :class => "vid" do %>
+          <% if user_signed_in? && current_user.admin? %>
+            <%= link_to "X", media_file_path(v), method: :delete, :class => "remove-vid", :id => "remove-vid-#{v.id}", :hidden => true, data: { confirm: "Are you sure you want to delete this video?" } %>
+            <script>
+              function removeVid(){
+                $('<%= "#vid-link-#{v.id}" %>').hover(function(){
+                  $('<%= "#remove-vid-#{v.id}" %>').prop('hidden', false);
+                }, function(){
+                  $('<%= "#remove-vid-#{v.id}" %>').prop('hidden', true);
+                });
+              }
+
+              $(document).ready(removeVid);
+            </script>
+          <% end %>
         <% end %>
       </span>
     <% end %>
