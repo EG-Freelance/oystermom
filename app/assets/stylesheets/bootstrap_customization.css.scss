@@ -133,8 +133,10 @@ input:focus, textarea:focus {
   overflow: hidden;
 }
 
-.vid-thumbnail {
+.vid {
   max-width: 600px !important;
+  padding-bottom: 30px;
+  padding-right: 30px;
 }
 
 .thumbnail-link:hover{
@@ -158,7 +160,7 @@ input:focus, textarea:focus {
 
 .remove-vid{
   position: absolute;
-  top: -135px;
+  top: 15px;
   right: 15px;
   z-index: 1000;
 }

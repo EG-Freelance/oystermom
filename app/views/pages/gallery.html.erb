@@ -73,9 +73,9 @@
         <button style="position:absolute; right:10px; top:0" class="btn btn-primary" data-toggle="modal" data-target="#upload-video">Upload Video</button>
       <% end %>
     </div>
-    <%= @media_files.where.not(video_file_name: nil).each do |v| %>
+    <% @media_files.where.not(video_file_name: nil).each do |v| %>
       <span class="vid-link" id='<%= "vid-link-#{v.id}" %>'>
-        <%= videojs_rails sources: { mp4: v.video.url }, controls: true, :class => "vid-thumbnail thumbnail-link" %>
+        <%= videojs_rails sources: { mp4: v.video.url }, controls: true, :class => "vid" %>
         <% if user_signed_in? && current_user.admin? %>
           <%= link_to "X", media_file_path(v), method: :delete, :class => "remove-vid", :id => "remove-vid-#{v.id}", :hidden => true, data: { confirm: "Are you sure you want to delete this video?" } %>
           <script>
