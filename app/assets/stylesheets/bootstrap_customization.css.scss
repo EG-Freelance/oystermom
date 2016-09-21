@@ -133,6 +133,10 @@ input:focus, textarea:focus {
   overflow: hidden;
 }
 
+.vid-thumbnail {
+  max-width: 600px !important;
+}
+
 .thumbnail-link:hover{
   opacity:0.3;
 }
