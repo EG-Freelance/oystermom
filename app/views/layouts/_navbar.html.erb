@@ -1,18 +1,20 @@
-<nav class="navbar navbar-default navbar-static-top" style="margin-bottom:0px !important; height:130px; padding-top:10px; z-index: 1000;">
+<nav class="navbar navbar-default navbar-static-top" style="margin-bottom:0px !important; height:130px; padding-top:10px; z-index: 1000">
   <div class="container-fluid">
-    <div class="navbar-header" style="width:100%">
-      <div class="navbar-brand" style="padding:0">
-        <a href="/">
-          <%= image_tag 'OMLogo.png', :class => 'logo', :alt => "OysterMom Logo" %>
-        </a>
-        <span style="font-size:48px; font-family:oswald; color:#222"><b>Premium Nurtured Oysters</b></span>
+    <div class="navbar-header" style="width:100%; position:relative">
+      <div class="navbar-brand" style="padding:0; display:inline; position:relative">
+        <span>
+          <a href="/">
+            <%= image_tag 'OMLogo.png', :class => 'logo', :alt => "OysterMom Logo" %>
+          </a>
+        </span>
+        <span class="branding-title"><b>Premium Nurtured Oysters</b></span>
       </div>
     </div>
     <div class="nav navbar-nav navbar-right" style="padding-right:10px; margin-top:-15px">
       <% if user_signed_in? %>
-        <%= link_to('Logout', destroy_user_session_path, :class => "btn btn-default", :style => "color:black", :method => :delete) %>
+        <%= link_to('Logout', destroy_user_session_path, :class => "btn btn-default", :style => "color:black; position:absolute; right:5px; top:50px", :method => :delete) %>
       <% else %>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#login">Admin Login</button>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#login" style="position:absolute; right:5px; top:50px">Admin Login</button>
       <% end %>
       
     </div>
@@ -30,12 +32,13 @@
       </button>
       <div id="secondary-navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-center">
-          <li class="nav-menu"><%= link_to "OYSTERSTORY", oysterstory_path %></li>     
+          <li class="nav-menu"><%= link_to "HOME", "/" %></li>     
         <!--  <li class="nav-menu"> <#= link_to "BLOG", 'blog_path' #></li> Commented until blog logic is worked out -->
           <li class="nav-menu"><%= link_to "LOCATION", location_path %></li>
           <li class="nav-menu"><%= link_to "TEAM", team_path %></li>
           <li class="nav-menu"><%= link_to "ORDER", order_path %></li>
           <li class="nav-menu"><%= link_to "GALLERY", gallery_path %></li>
+          <li class="nav-menu"><%= link_to "FARMED VS WILD", fvw_path %></li>
           <li class="nav-menu"><%= link_to "CONTACT", contact_path %></li>
         </ul>
       </div>

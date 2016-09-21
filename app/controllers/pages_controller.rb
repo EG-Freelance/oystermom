@@ -16,6 +16,9 @@ class PagesController < ApplicationController
   def oysterstory
   end
   
+  def fvw
+  end
+  
   def gallery
     @media_files = MediaFile.all
     @media_file = MediaFile.new

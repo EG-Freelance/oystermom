@@ -1,0 +1,26 @@
+<%= simple_form_for(@media_file, multipart: true) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field" id="image_field">
+    <%= f.label :image %>
+    <%= f.file_field :image, :style => "width: 75%" %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Upload', :class => 'btn btn-primary', :style => "width:75px !important", :id => 'media_file_submit' %>
+  </div>
+<% end %>
+
+<script>
+  function submitValidation(){
+    if($('#media_file_image').val() == ""){
+      $('#media_file_submit').prop('disabled', true);
+    }else{
+      $('#media_file_submit').prop('disabled', false);
+    }
+  }
+  
+  $(document).ready(submitValidation);
+  $('#media_file_image').change(submitValidation);
+</script>

@@ -1,4 +1,5 @@
 class MediaFilesController < ApplicationController
+  before_action :set_media_file, only: [:destroy]
   def create
     @media_file = MediaFile.new(media_file_params)
     if @media_file.save
@@ -12,6 +13,14 @@ class MediaFilesController < ApplicationController
         format.json { head :no_content }
       end
     end
+  end
+  
+  def destroy
+    @media_file.destroy
+    respond_to do |format|
+      format.html { redirect_to gallery_url, notice: 'Media File was successfully destroyed.' }
+      format.json { head :no_content }
+    end    
   end
 
   private

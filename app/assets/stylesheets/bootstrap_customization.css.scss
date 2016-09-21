@@ -1,3 +1,31 @@
+/* MIXIN TO ALLOW FOR MAX-FONT-SIZE WHEN USING VW */
+
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    font-size: $min;
+  }
+  
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      font-size: $max;
+    }
+  }
+  
+  @if $fallback {
+    font-size: $fallback;
+  }
+  
+  font-size: $responsive;
+}
+
+/* END MIXIN */
+
 body{
   background: #fefefe !important;
 }
@@ -19,6 +47,17 @@ body{
 .logo {
   height: 120px;
   width: 160px;
+}
+
+.branding-title{
+  position:absolute; 
+  top: 50px; 
+  left: 170px; 
+  width:100vw; 
+  font-size:48px;
+  @include responsive-font(5vw, 8px, 48px, 48px);
+  font-family:oswald; 
+  color:#222;
 }
 
 #footer {
@@ -93,4 +132,43 @@ input:focus, textarea:focus {
   background-repeat: no-repeat;
   overflow: hidden;
 }
+
+.thumbnail-link:hover{
+  opacity:0.3;
+}
+
+.img-link{
+  position: relative;
+}
+
+.remove-img{
+  position: absolute;
+  top: -135px;
+  right: 15px;
+  z-index: 1000;
+}
 /* END BLUEIMP */
+
+/* TEAM ACCORDION */
+.panel.panel-default{
+  margin-bottom: 5px !important;
+}
+
+.accordion-text{
+   margin-top: 10px;
+  margin-left:10px;
+}
+/* END TEAM ACCORDION */
+
+/* SCREEN SIZE CUSTOMIZATION */
+@media(max-width: 991px){
+  .big{
+    display:none;
+  }
+}
+@media(min-width: 992px){
+  .small{
+    display:none;
+  }
+}
+/* END SSC */
