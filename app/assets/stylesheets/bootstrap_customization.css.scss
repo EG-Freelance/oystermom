@@ -141,7 +141,18 @@ input:focus, textarea:focus {
   position: relative;
 }
 
+.vid-link{
+  position: relative;
+}
+
 .remove-img{
+  position: absolute;
+  top: -135px;
+  right: 15px;
+  z-index: 1000;
+}
+
+.remove-vid{
   position: absolute;
   top: -135px;
   right: 15px;
