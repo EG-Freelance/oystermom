@@ -1,0 +1,19 @@
+<%= simple_form_for(:subscription, :url => subscriptions_path, :class => "form") do |f| %>
+  <p class="email"> 
+    <%= f.text_field :email, :id => "email" %>
+    <label for="email">Email</label> 
+  </p> 
+  <p class="first_name"> 
+    <%= f.text_field :first_name, :id => "first_name" %> 
+    <label for="first_name">First Name</label> 
+  </p>
+  <p class="last_name"> 
+    <%= f.text_field :last_name, :id => "last_name" %> 
+    <label for="last_name">Last Name</label> 
+  </p>
+  <p class="location"> 
+    <%= f.text_field :address, :id => "location" %> 
+    <label for="address">Location</label> 
+  </p>
+  <%= f.submit 'Subscribe', :class => 'submit btn btn-primary', :style => "width:125px", :method => :post %>
+<% end %>

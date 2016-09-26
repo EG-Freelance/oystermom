@@ -45,8 +45,8 @@
       <p>OysterMom is a career conservationist dedicated to sustainable oyster aquaculture.  Using only best management practices, OysterMom is working for the future of oysters as a sustainable food source and as habitat for the Gulf of Mexico.  OysterMom is certified by the FL Dept of Agriculture as a Certified Shellfish Harvester and Processor selling premium farmed oysters.</p>
     </div>
     <div class="col-three">
-      <h2 style="font-family:franklin-gothic-heavy">Be Notified of Harvests and Events</h2>
-      <%= image_tag('subscribe.png', :alt => "Subscribe for updates", :width => "100%", :id => "img-six") %>
+      <a class="user-link" data-toggle="modal" data-target="#subscribe"><h2 style="font-family:franklin-gothic-heavy">Be Notified of Harvests and Events</h2>
+      <%= image_tag('subscribe.png', :alt => "Subscribe for updates", :width => "100%", :id => "img-six") %></a>
       <p>I will let you know when we are harvesting and where you can find OysterMom oysters in the Tallahassee area.   Enter your email to be notified.</p>
     </div>
   </div>
@@ -73,3 +73,24 @@
   });
   $(window).resize(resizeMaps);
 </script>
+
+<!-- Log In Modal -->
+<div id="subscribe" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Subscribe for Updates</h4>
+      </div>
+      <div class="modal-body">
+        <%= render 'subscriptions/subscribe' %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

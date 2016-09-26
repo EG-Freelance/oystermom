@@ -92,7 +92,7 @@ input, textarea, filearea {
     border: solid 1px #E5E5E5; 
     outline: 0; 
     font: normal 13px/100% Verdana, Tahoma, sans-serif; 
-    width: 200px; 
+    width: 60%; 
     background: #FFFFFF url('bg_form.png') left top repeat-x; 
     background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF)); 
     background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px); 
@@ -102,8 +102,7 @@ input, textarea, filearea {
     } 
    
 textarea { 
-    width: 400px; 
-    max-width: 400px; 
+    width: 60%; 
     height: 150px; 
     line-height: 150%; 
     } 

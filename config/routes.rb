@@ -1,24 +1,25 @@
 Rails.application.routes.draw do
   
+  resources :subscriptions
   devise_for :users
   root to: "pages#index"
   post "/" => "pages#index"
-  get "/location" => "pages#location", :as => "location"
-  get "/gallery" => "pages#gallery", :as => "gallery"
-  get "/order" => "pages#order", :as => "order"
-  get "/team" => "pages#team", :as => "team"
-  get "/oysterstory" => "pages#oysterstory", :as => "oysterstory"
-  get "/contact" => "pages#contact", :as => "contact"
-  get "/farmed-vs-wild" => "pages#fvw", :as => "fvw"
+  #get "/location" => "pages#location", :as => "location"
+  #get "/gallery" => "pages#gallery", :as => "gallery"
+  #get "/order" => "pages#order", :as => "order"
+  #get "/team" => "pages#team", :as => "team"
+  #get "/oysterstory" => "pages#oysterstory", :as => "oysterstory"
+  #get "/contact" => "pages#contact", :as => "contact"
+  #get "/farmed-vs-wild" => "pages#fvw", :as => "fvw"
   #get "/blog" => "pages#blog", :as => "blog"
   
-  post '/gallery' => 'media_files#create'
+  #post '/gallery' => 'media_files#create'
 
-  resources :posts
+  #resources :posts
   
-  authenticated :user, lambda { |u| u.admin? } do
-    resources :media_files
-  end
+  #authenticated :user, lambda { |u| u.admin? } do
+  #  resources :media_files
+  #end
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
