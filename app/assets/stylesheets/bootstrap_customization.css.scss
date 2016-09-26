@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'franklin-gothic-demi';
-    src: url('/assets/franklin-gothic-demi.ttf');
+    src: font-url('/assets/franklin-gothic-demi.ttf');
 }
 
 @font-face {
     font-family: 'franklin-gothic-heavy';
-    src: url('/assets/franklin-gothic-heavy.ttf');
+    src: font-url('/assets/franklin-gothic-heavy.ttf');
 }
 
 /* MIXIN TO ALLOW FOR MAX-FONT-SIZE WHEN USING VW */
