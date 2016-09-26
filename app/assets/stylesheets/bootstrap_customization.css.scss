@@ -1,13 +1,3 @@
-@font-face {
-    font-family: 'franklin-gothic-demi';
-    src: font-url('/assets/franklin-gothic-demi.ttf');
-}
-
-@font-face {
-    font-family: 'franklin-gothic-heavy';
-    src: font-url('/assets/franklin-gothic-heavy.ttf');
-}
-
 /* MIXIN TO ALLOW FOR MAX-FONT-SIZE WHEN USING VW */
 
 @mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
