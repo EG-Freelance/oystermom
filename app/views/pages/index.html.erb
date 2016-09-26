@@ -1,6 +1,75 @@
-<div class="big">
-  <%= render 'pages/index_big' %>
+<div class="intro-section">
+  <%= image_tag('OMTagline.jpg', :alt => "OysterMom", :class => "tagline") %>
+  <div>
+    <p class="intro-text">OysterMom oysters are grown in this bay <br />
+      In these clean waters <br />
+      Harvested when you need them. <br />
+      <%= mail_to "keller@oystermom.com", "Click here" %> to order <br />
+      Or call	<br />
+      850-566-7051
+    </p>
+  </div>
 </div>
-<div class="small">
-  <%= render 'pages/index_small' %>
+
+<div class="second-section">
+  <div class="row" style="display: inline">
+    <div class="col-one">
+      <h2 style="font-family:franklin-gothic-heavy">Location, Location</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d43853.661746954545!2d-84.31621037049841!3d30.05809949804059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1473808050292" width="100%" height="300px" frameborder="0" style="border:0" allowfullscreen id="img-one"></iframe>
+      <p>The best oysters come from the best waters.  OysterMom’s are raised in Apalachee Bay– which is surrounded by protected lands including St Marks National Wildlife Refuge, Apalachicola National Forest and Wakulla Springs.  They feed on nature’s bounty.  Raised up right by OysterMom.</p>
+    </div>
+    <div class="col-two">
+      <h2 style="font-family:franklin-gothic-heavy">How to Order</h2>
+      <%= image_tag('half-shell.jpg', :alt => "Oysters on the half shell", :width => "100%", :id => "img-two") %>
+      <p>Submit your order in lots of 50 oysters, sold at $0.60 per oyster <br />
+        10% Discount for orders of 400 or more</p>
+    </div>
+    <div class="col-three">
+      <h2 style="font-family:franklin-gothic-heavy">Pickup Location</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3439.6229110791846!2d-84.26580488456143!3d30.446789981737673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88ec5f82159f3dbb%3A0x1b66a58e007c11f2!2s1139+E+Tennessee+St%2C+Tallahassee%2C+FL+32308!5e0!3m2!1sen!2sus!4v1474383893663" width="100%" height="300px" frameborder="0" style="border:0" allowfullscreen id="img-three"></iframe>
+      <p>Harvested when you need them and available by appointment at 1139 E. Tennessee St  in downtown Tallahassee (Behind B&amp;B Sporting Goods)</p>
+    </div>
+  </div>
 </div>
+
+<div class="third-section">
+  <div class="row" style="display: inline">
+    <div class="col-one">
+      <h2 style="font-family:franklin-gothic-heavy">Farmed vs. Wild</h2>
+      <%= image_tag('seapa-baskets.jpg', :alt => "Oysters baskets", :width => "100%", :id => "img-four") %>
+      <p>When you purchase OysterMom oysters, you know exactly where they came from, who took care of them, when they were harvested and how they were raised.  No additives. Approved clean waters. Careful handling from start to your hands.</p>
+    </div>
+    <div class="col-two">
+      <h2 style="font-family:franklin-gothic-heavy">Who is OysterMom?</h2>
+      <%= image_tag('oystermom.jpg', :alt => "OysterMom", :width => "100%", :id => "img-five") %>
+      <p>OysterMom is a career conservationist dedicated to sustainable oyster aquaculture.  Using only best management practices, OysterMom is working for the future of oysters as a sustainable food source and as habitat for the Gulf of Mexico.  OysterMom is certified by the FL Dept of Agriculture as a Certified Shellfish Harvester and Processor selling premium farmed oysters.</p>
+    </div>
+    <div class="col-three">
+      <h2 style="font-family:franklin-gothic-heavy">Be Notified of Harvests and Events</h2>
+      <%= image_tag('subscribe.png', :alt => "Subscribe for updates", :width => "100%", :id => "img-six") %>
+      <p>I will let you know when we are harvesting and where you can find OysterMom oysters in the Tallahassee area.   Enter your email to be notified.</p>
+    </div>
+  </div>
+</div>
+
+<div class="last-section">
+  <h2>Thank you for enjoying OysterMom oysters!</h2>
+  <%= image_tag('OMLogo.png', :alt => "OysterMom", :height => "400px", :id => "logo") %>
+  <p><span style="font-family:franklin-gothic-heavy">Phone: </span>850-566-7051</p>
+  <p>1139 E Tennessee St</p>
+  <p>Tallahassee, FL 32308</p>
+</div>
+
+<script>
+  function resizeMaps(){
+    var height = $('#img-two').height();
+    $('#img-one').height(height);
+    $('#img-three').height(height);
+  }
+  
+  $(document).ready(function(){
+    setTimeout(resizeMaps,100);
+    setTimeout(resizeMaps,1500);
+  });
+  $(window).resize(resizeMaps);
+</script>

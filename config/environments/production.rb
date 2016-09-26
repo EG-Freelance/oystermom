@@ -1,5 +1,10 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  
+  # Custom fonts
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+  config.assets.precompile += %w( .svg .eot .woff .ttf)
+
 
   # s3 storage
   config.paperclip_defaults = {
