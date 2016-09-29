@@ -15,5 +15,6 @@
     <%= f.text_field :address, :id => "location" %> 
     <label for="address">Location</label> 
   </p>
-  <%= f.submit 'Subscribe', :class => 'submit btn btn-primary', :style => "width:125px", :method => :post %>
+  <%= f.submit 'Subscribe', :class => 'submit btn btn-primary', :style => "width:125px", :method => :post, :id => "subscribe-button" %>
+  <%= f.submit 'Unsubscribe', :class => 'submit btn btn-danger', :style=> "width:125px", :method => :post, :id => "unsubscribe-button" %>
 <% end %>

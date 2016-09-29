@@ -24,15 +24,34 @@ class SubscriptionsController < ApplicationController
   # POST /subscriptions
   # POST /subscriptions.json
   def create
-    @subscription = Subscription.new(subscription_params)
+    if params[:commit] == "Subscribe"
+      @subscription = Subscription.new(subscription_params)
 
-    respond_to do |format|
-      if @subscription.save
-        format.html { redirect_to :root, notice: 'Subscription was successfully created.' }
-        format.json { render :show, status: :created, location: @subscription }
-      else
-        format.html { render :new }
-        format.json { render json: @subscription.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @subscription.save
+          flash[:notice] = 'You have subscribed to OysterMom!'
+          format.html { redirect_to :root }
+          format.json { render :show, status: :created, location: @subscription }
+        else
+          flash[:alert] = @subscription.errors
+          format.html { redirect_to :root }
+          format.json { render json: @subscription.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      @subscription = Subscription.find_by(email: params[:email])
+      
+      respond_to do |format|
+        if @subscription.nil?
+          flash[:alert] = "We couldn't find a subscription matching that email address"
+          format.html { redirect_to :root }
+        elsif @subscription.destroy
+          flash[:notice] = 'You have unsubscribed from OysterMom'
+          format.html { redirect_to :root }
+        else
+          flash[:alert] = @subscription.errors
+          format.html { redirect_to :root }
+        end
       end
     end
   end

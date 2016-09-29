@@ -17,6 +17,28 @@
 //= require_tree .
 
 function ready_f() {
+  
+  // disable subscription buttons when necessary fields aren't filled in
+  function disable_buttons(){
+    if($('#email').val() == "" || $('#first_name').val() == ""  || $('#last_name').val() == "" || $('#location').val() == ""){
+      $('#subscribe-button').prop('disabled', true);
+    }else{
+      $('#subscribe-button').prop('disabled', false);
+    }
+    
+    if($('#email').val() == ""){
+      $('#unsubscribe-button').prop('disabled', true);
+    }else{
+      $('#unsubscribe-button').prop('disabled', false);
+    }
+  }
+  
+  $(window).load(disable_buttons);
+  
+  $('#email').change(disable_buttons);
+  $('#first_name').change(disable_buttons);
+  $('#last_name').change(disable_buttons);
+  $('#location').change(disable_buttons);
 
   // navigation button
   $('#button1-down').click(function(e){
@@ -27,6 +49,8 @@ function ready_f() {
     var location = $(window).scrollTop(); // this is the distance from the top of the window to the top of the page  
     var scrollBottom = $(window).scrollTop() + $(window).height();
     var bottomPosition = $(document).height();
+    
+    // rotate the arrow when clicking to the bottom
     function AnimateRotate(sd, ed){
       var elem = $("#arrow");
 

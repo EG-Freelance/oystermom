@@ -197,6 +197,18 @@ input:focus, textarea:focus {
 /* END SSC */
 
 /* BEGIN SECOND LAYOUT CSS */
+.notice{
+  background-color: lightgreen;
+  color: darkgreen;
+  text-align: center;
+}
+
+.danger{
+  background-color: pink;
+  color: darkred;
+  text-align: center;
+}
+
 .tagline{
   opacity: 0.7;
   height: 450px;
@@ -209,7 +221,7 @@ input:focus, textarea:focus {
   background-image: url('cover.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top;
+  background-position: bottom;
 }
 
 .intro-text{
