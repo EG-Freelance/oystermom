@@ -51,7 +51,7 @@ gem 'unicorn'
 gem 'material_icons'
 group :assets do
   #gem 'jquery-smooth-scroll-rails'
-  gem 'jquery-smooth-scroll-rails', :git => 'git@github.com:gretel/jquery-smooth-scroll-rails.git'
+  gem 'jquery-smooth-scroll-rails'#, :git => 'git@github.com:gretel/jquery-smooth-scroll-rails.git'
 end
 
 # Use jquery as the JavaScript library

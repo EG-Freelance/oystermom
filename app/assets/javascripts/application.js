@@ -27,6 +27,18 @@ function ready_f() {
     var location = $(window).scrollTop(); // this is the distance from the top of the window to the top of the page  
     var scrollBottom = $(window).scrollTop() + $(window).height();
     var bottomPosition = $(document).height();
+    function AnimateRotate(sd, ed){
+      var elem = $("#arrow");
+
+      $({deg: sd}).animate({deg: ed}, {
+        duration: 2000,
+        step: function(now){
+          elem.css({
+            transform: "rotate(" + now + "deg)"
+          });
+        }
+      });
+    }
 
     e.preventDefault(); // don't do anything stupid
 
@@ -34,16 +46,30 @@ function ready_f() {
     // $(element).offset().top is the distance from the top of the element to the top of the page
     if (scrollBottom >= (bottomPosition - 10) ){
       target_hash = "#intro-section";
+      if($('#arrow').css('transform').split(", ")[1] == "-1"){
+        AnimateRotate(270,90);
+      }
     } else if (location < $("#second-section").offset().top) {
       target_hash = "#second-section";
+      if($('#arrow').css('transform').split(", ")[1] == "-1"){
+        AnimateRotate(270,90);
+      }
     } else if (location < $("#third-section").offset().top && location >= $("#second-section").offset().top) {
       target_hash = "#third-section";
+      if($('#arrow').css('transform').split(", ")[1] == "-1"){
+        AnimateRotate(270,90);
+      }
     } else if (location < ( $("#last-section").offset().top - 100 ) && location >= $("#third-section").offset().top) {
       target_hash = "#last-section";
+      AnimateRotate(90,270);
     } else if (location >= ( $("#last-section").offset().top - 100 )) {
       target_hash = "#intro-section";
+      if($('#arrow').css('transform').split(", ")[1] == "-1"){
+        AnimateRotate(270,90);
+      }
     }
 
+  
     // quick flash for button to show click and then smooth scrolling
     button.animate({ 'background-color': 'green'}, 1, function() {
       button.animate({ 'background-color': 'navy'}, 1500 );
