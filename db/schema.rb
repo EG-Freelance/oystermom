@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160926165357) do
+ActiveRecord::Schema.define(version: 20160929215029) do
 
   create_table "media_files", force: :cascade do |t|
     t.integer  "post_id"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20160926165357) do
     t.datetime "updated_at", null: false
     t.string   "type"
     t.text     "title"
+    t.string   "name"
   end
 
   create_table "subscriptions", force: :cascade do |t|

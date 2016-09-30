@@ -266,7 +266,32 @@ input:focus, textarea:focus {
 .last-section{
   display: inline-block;
   text-align: center;
-  width:100%;
+  width:100%;;
+}
+
+.bottom-left{
+  float: left;
+  width: 400px;
+  text-align: center;
+}
+
+.bottom-right{
+  overflow: scroll;
+  margin-left: 400px;
+  max-height: 500px;
+}
+
+.comment-name{
+  float: left;
+}
+
+.comment-text{
+  height: 40px;
+  float: left;
+}
+
+.comment-submit{
+  float: left;
 }
 
 // steve stuff //

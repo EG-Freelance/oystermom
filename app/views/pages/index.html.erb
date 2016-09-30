@@ -59,11 +59,18 @@
 </div>
 
 <div class="last-section" id='last-section'>
-  <h2>Thank you for enjoying OysterMom oysters!</h2>
-  <%= image_tag('OMLogo.png', :alt => "OysterMom", :height => "400px", :id => "logo") %>
-  <p><span style="font-family:franklin-gothic-heavy">Phone: </span>850-566-7051</p>
-  <p>1139 E Tennessee St</p>
-  <p>Tallahassee, FL 32308</p>
+  <div class="row" style="margin-right:0px; padding-right: 10px">
+    <div class="bottom-left">
+      <h2>Thank you for enjoying OysterMom oysters!</h2>
+      <%= image_tag('OMLogo.png', :alt => "OysterMom", :width => "300px", :id => "logo") %>
+      <p><span style="font-family:franklin-gothic-heavy">Phone: </span>850-566-7051</p>
+      <p>1139 E Tennessee St</p>
+      <p>Tallahassee, FL 32308</p>
+    </div>
+    <div class="bottom-right" id="comments">
+      <%= render 'posts/comments' %>
+    </div>
+  </div>
 </div>
 
 <script>

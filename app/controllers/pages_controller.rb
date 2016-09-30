@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   # GET /pages.json
   def index
     @pages = Page.all
+    @post = Post.new
   end
   
   def location
