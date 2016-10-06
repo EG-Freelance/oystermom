@@ -294,6 +294,34 @@ input:focus, textarea:focus {
   float: left;
 }
 
+.edit-content{
+  position: absolute;
+  top: -5px;
+  right: 5px;
+  font-family: roboto;
+  font-size: 10px;
+}
+
+.content-block{
+  text-align: justify; 
+  color: black; 
+  position:relative; 
+  padding-top: 15px;
+}
+
+.content-header{
+  font-family:franklin-gothic-heavy; 
+  position:relative;
+}
+
+.content-edit-text{
+  width: 80%;
+}
+
+.content-submit{
+  width: 75px;
+}
+
 // steve stuff //
 
 #button1-down:hover {

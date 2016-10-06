@@ -6,9 +6,18 @@ class PagesController < ApplicationController
   def index
     @pages = Page.all
     @post = Post.new
+    @content = Content.all
   end
   
   def location
+  end
+  
+  def update_content
+    content = Content.find(params['id'])
+    content.update(text: params['text'])
+    respond_to do |format|
+      format.html {redirect_to :back}
+    end
   end
   
   def contact

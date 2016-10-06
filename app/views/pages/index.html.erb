@@ -1,15 +1,11 @@
 <div class="intro-section" id="intro-section">
   <%= image_tag('OMTagline.jpg', :alt => "OysterMom", :class => "tagline") %>
   <div>
-    <p class="intro-text">OysterMom oysters are grown in this bay <br />
-      In these clean waters <br />
-      Harvested when you need them. <br />
-      <%= mail_to "keller@oystermom.com", "Click here" %> to order <br />
-      Or call	<br />
-      850-566-7051
-    </p>
+    <p class="intro-text" style="position:relative"><%= raw @content.find_by(title: 'title_t').text %><% if user_signed_in? %><a data-id="<%= @content.find_by(title: 'title_t').id %>" data-text="<%= @content.find_by(title: 'title_t').text %>" data-toggle="modal" data-target="#edit-content" class="edit-content">edit</a><% end %></p>
   </div>
 </div>
+
+<%= @content.to_json %>
 
 <div id='button1' style='z-index: 100; top: 0; right: 0; padding-right: 80px; padding-top: 20px; width: 30px; position: fixed;'>
   <div id='button1-down' style='text-align:center; background: navy; color: white; border-width: 1px; border-color: blue; border-radius: 50%; height: 45px; width: 45px; padding-top: 5px; box-shadow: 5px 5px 5px grey;' aria-label="Next">
@@ -20,20 +16,19 @@
 <div class="second-section" id='second-section'>
   <div class="row" style="display: inline">
     <div class="col-one">
-      <h2 style="font-family:franklin-gothic-heavy">Location, Location</h2>
+      <h2 class="content-header"><%= raw @content.find_by(title: 'r1_c1_h').text %><% if user_signed_in? %><a data-id="<%= @content.find_by(title: 'r1_c1_h').id %>" data-text="<%= @content.find_by(title: 'r1_c1_h').text %>" data-toggle="modal" data-target="#edit-content" class="edit-content">edit</a><% end %></h2>
       <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d43853.661746954545!2d-84.31621037049841!3d30.05809949804059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1473808050292" width="100%" height="300px" frameborder="0" style="border:0" allowfullscreen id="img-one"></iframe>
-      <p style='text-align: justify; color: black;'>The best oysters come from the best waters.  OysterMom’s are raised in Apalachee Bay– which is surrounded by protected lands including St Marks National Wildlife Refuge, Apalachicola National Forest and Wakulla Springs.  They feed on nature’s bounty.  Raised up right by OysterMom.</p>
+      <p class="content-block"><%= raw @content.find_by(title: 'r1_c1_t').text %><% if user_signed_in? %><a data-id="<%= @content.find_by(title: 'r1_c1_t').id %>" data-text="<%= @content.find_by(title: 'r1_c1_t').text %>" data-toggle="modal" data-target="#edit-content" class="edit-content">edit</a><% end %></p>
     </div>
     <div class="col-two">
-      <h2 style="font-family:franklin-gothic-heavy">How to Order</h2>
+      <h2 class="content-header"><%= raw @content.find_by(title: 'r1_c2_h').text %><% if user_signed_in? %><a data-id="<%= @content.find_by(title: 'r1_c2_h').id %>" data-text="<%= @content.find_by(title: 'r1_c2_h').text %>" data-toggle="modal" data-target="#edit-content" class="edit-content">edit</a><% end %></h2>
       <%= image_tag('half-shell.jpg', :alt => "Oysters on the half shell", :width => "100%", :id => "img-two") %>
-      <p style='text-align: justify; color: black;'>Submit your order in lots of 50 oysters, sold at $0.60 per oyster <br />
-        10% Discount for orders of 400 or more</p>
+      <p class="content-block"><%= raw @content.find_by(title: 'r1_c2_t').text %><% if user_signed_in? %><a data-id="<%= @content.find_by(title: 'r1_c2_t').id %>" data-text="<%= @content.find_by(title: 'r1_c2_t').text %>" data-toggle="modal" data-target="#edit-content" class="edit-content">edit</a><% end %></p>
     </div>
     <div class="col-three">
-      <h2 style="font-family:franklin-gothic-heavy">Pickup Location</h2>
+      <h2 class="content-header"><%= raw @content.find_by(title: 'r1_c3_h').text %><% if user_signed_in? %><a data-id="<%= @content.find_by(title: 'r1_c3_h').id %>" data-text="<%= @content.find_by(title: 'r1_c3_h').text %>" data-toggle="modal" data-target="#edit-content" class="edit-content">edit</a><% end %></h2>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3439.6229110791846!2d-84.26580488456143!3d30.446789981737673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88ec5f82159f3dbb%3A0x1b66a58e007c11f2!2s1139+E+Tennessee+St%2C+Tallahassee%2C+FL+32308!5e0!3m2!1sen!2sus!4v1474383893663" width="100%" height="300px" frameborder="0" style="border:0" allowfullscreen id="img-three"></iframe>
-      <p style='text-align: justify; color: black;'>Harvested when you need them and available by appointment at 1139 E. Tennessee St  in downtown Tallahassee (Behind B&amp;B Sporting Goods)</p>
+      <p class="content-block"><%= raw @content.find_by(title: 'r1_c3_t').text %><% if user_signed_in? %><a data-id="<%= @content.find_by(title: 'r1_c3_t').id %>" data-text="<%= @content.find_by(title: 'r1_c3_t').text %>" data-toggle="modal" data-target="#edit-content" class="edit-content">edit</a><% end %></p>
     </div>
   </div>
 </div>
@@ -41,19 +36,19 @@
 <div class="third-section" id='third-section'>
   <div class="row" style="display: inline">
     <div class="col-one">
-      <h2 style="font-family:franklin-gothic-heavy">Farmed vs. Wild</h2>
+      <h2 class="content-header"><%= raw @content.find_by(title: 'r2_c1_h').text %><% if user_signed_in? %><a data-id="<%= @content.find_by(title: 'r2_c1_h').id %>" data-text="<%= @content.find_by(title: 'r2_c1_h').text %>" data-toggle="modal" data-target="#edit-content" class="edit-content">edit</a><% end %></h2>
       <%= image_tag('seapa-baskets.jpg', :alt => "Oysters baskets", :width => "100%", :id => "img-four") %>
-      <p style='text-align: justify; color: black;'>When you purchase OysterMom oysters, you know exactly where they came from, who took care of them, when they were harvested and how they were raised.  No additives. Approved clean waters. Careful handling from farm to table.</p>
+      <p class="content-block"><%= raw @content.find_by(title: 'r2_c1_t').text %><% if user_signed_in? %><a data-id="<%= @content.find_by(title: 'r2_c1_t').id %>" data-text="<%= @content.find_by(title: 'r2_c1_t').text %>" data-toggle="modal" data-target="#edit-content" class="edit-content">edit</a><% end %></p>
     </div>
     <div class="col-two">
-      <h2 style="font-family:franklin-gothic-heavy">Who is OysterMom?</h2>
+      <h2 class="content-header"><%= raw @content.find_by(title: 'r2_c2_h').text %><% if user_signed_in? %><a data-id="<%= @content.find_by(title: 'r2_c2_h').id %>" data-text="<%= @content.find_by(title: 'r2_c2_h').text %>" data-toggle="modal" data-target="#edit-content" class="edit-content">edit</a><% end %></h2>
       <%= image_tag('oystermom.jpg', :alt => "OysterMom", :width => "100%", :id => "img-five") %>
-      <p style='text-align: justify; color: black;'>OysterMom is a career conservationist dedicated to sustainable oyster aquaculture.  Using only best management practices, OysterMom is working for the future of oysters as a sustainable food source and as habitat for the Gulf of Mexico.  OysterMom is certified by the FL Dept of Agriculture as a Certified Shellfish Harvester and Processor selling premium farmed oysters.</p>
+      <p class="content-block"><%= raw @content.find_by(title: 'r2_c2_t').text %><% if user_signed_in? %><a data-id="<%= @content.find_by(title: 'r2_c2_t').id %>" data-text="<%= @content.find_by(title: 'r2_c2_t').text %>" data-toggle="modal" data-target="#edit-content" class="edit-content">edit</a><% end %></p>
     </div>
     <div class="col-three">
-      <a class="user-link" data-toggle="modal" data-target="#subscribe"><h2 style="font-family:franklin-gothic-heavy">Be Notified of Harvests and Events</h2>
+      <a class="user-link" data-toggle="modal" data-target="#subscribe"><h2 class="content-header"><%= raw @content.find_by(title: 'r2_c3_h').text %><% if user_signed_in? %><a data-id="<%= @content.find_by(title: 'r2_c3_h').id %>" data-text="<%= @content.find_by(title: 'r2_c3_h').text %>" data-toggle="modal" data-target="#edit-content" class="edit-content">edit</a><% end %></h2>
         <%= image_tag('subscribe.png', :alt => "Subscribe for updates", :width => "100%", :id => "img-six") %></a>
-      <p style='text-align: justify; color: black;'>I will let you know when we are harvesting and where you can find OysterMom oysters in the Tallahassee area.   Enter your email to be notified.</p>
+      <p class="content-block"><%= raw @content.find_by(title: 'r2_c3_t').text %><% if user_signed_in? %><a data-id="<%= @content.find_by(title: 'r2_c3_t').id %>" data-text="<%= @content.find_by(title: 'r2_c3_t').text %>" data-toggle="modal" data-target="#edit-content" class="edit-content">edit</a><% end %></p>
     </div>
   </div>
 </div>
@@ -61,11 +56,9 @@
 <div class="last-section" id='last-section'>
   <div class="row" style="margin-right:0px; padding-right: 10px">
     <div class="bottom-left">
-      <h2>Thank you for enjoying OysterMom oysters!</h2>
+      <h2 style="position:relative"><%= raw @content.find_by(title: 'end_h').text %><% if user_signed_in? %><a data-id="<%= @content.find_by(title: 'end_h').id %>" data-text="<%= @content.find_by(title: 'end_h').text %>" data-toggle="modal" data-target="#edit-content" class="edit-content">edit</a><% end %></h2>
       <%= image_tag('OMLogo.png', :alt => "OysterMom", :width => "300px", :id => "logo") %>
-      <p><span style="font-family:franklin-gothic-heavy">Phone: </span>850-566-7051</p>
-      <p>1139 E Tennessee St</p>
-      <p>Tallahassee, FL 32308</p>
+      <p style="position:relative"><%= raw @content.find_by(title: 'end_t').text %><% if user_signed_in? %><a data-id="<%= @content.find_by(title: 'end_t').id %>" data-text="<%= @content.find_by(title: 'end_t').text %>" data-toggle="modal" data-target="#edit-content" class="edit-content">edit</a><% end %></p>
     </div>
     <div class="bottom-right" id="comments">
       <%= render 'posts/comments' %>
@@ -87,7 +80,7 @@
   $(window).resize(resizeMaps);
 </script>
 
-<!-- Log In Modal -->
+<!-- Subscriptions Modal -->
 <div id="subscribe" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
@@ -107,3 +100,39 @@
 
   </div>
 </div>
+
+<!-- Edit Content Modal -->
+<div id="edit-content" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit content</h4>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for('content', :url => update_content_path) do |f| %>
+          <%= text_area_tag 'text', "", :id => 'content-text-field', :class => 'content-edit-text' %>
+          <br>
+          <%= hidden_field_tag 'id', "", :id => 'content-id-field' %>
+          <%= f.submit 'Submit', :class => 'content-submit btn btn-primary' %>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  $(document).on("click", ".edit-content", function () {
+    var contentText = $(this).data('text');
+    var contentId = $(this).data('id');
+    console.log(contentId);
+    $("#content-text-field").val( contentText );
+    $("#content-id-field").val( contentId );
+  });
+</script>
