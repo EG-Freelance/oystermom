@@ -3,7 +3,7 @@
     <a href="https://www.facebook.com/OysterMom.Oysters/" target="_blank"><%= image_tag "facebook.png", :class => "sm-logo" %></a>
     <a href="http://oystermom.blogspot.com/" target="_blank"><%= image_tag "blogspot.png", :class => "sm-logo" %></a>
     <a href="#"><%= image_tag "instagram.png", :class => "sm-logo" %></a>
-    <% if user_signed_in? %><%= link_to('Logout', destroy_user_session_path, :class => "pull-right btn btn-default", :method => :delete) %><% else %><button class="pull-right btn btn-primary" data-toggle="modal" data-target="#login">Admin Login</button><% end %>
+    <% if user_signed_in? %><%= link_to('Logout', destroy_user_session_path, :class => "pull-right btn btn-default", :style => "margin-right:20px; margin-top:20px", :method => :delete) %><% else %><button class="pull-right btn btn-primary" data-toggle="modal" data-target="#login" style="margin-right:20px; margin-top:20px">Admin Login</button><% end %>
   </div>
 </div>
 
