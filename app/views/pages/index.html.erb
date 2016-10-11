@@ -44,9 +44,9 @@
       <p class="content-block"><%= raw @content.find_by(title: 'r2_c2_t').text %><% if user_signed_in? %><a data-id="<%= @content.find_by(title: 'r2_c2_t').id %>" data-text="<%= @content.find_by(title: 'r2_c2_t').text %>" data-toggle="modal" data-target="#edit-content" class="edit-content">edit</a><% end %></p>
     </div>
     <div class="col-three">
-      <a class="user-link" data-toggle="modal" data-target="#subscribe"><h2 class="content-header"><%= raw @content.find_by(title: 'r2_c3_h').text %><% if user_signed_in? %><a data-id="<%= @content.find_by(title: 'r2_c3_h').id %>" data-text="<%= @content.find_by(title: 'r2_c3_h').text %>" data-toggle="modal" data-target="#edit-content" class="edit-content">edit</a><% end %></h2>
-        <%= image_tag('subscribe.png', :alt => "Subscribe for updates", :width => "100%", :id => "img-six") %></a>
-      <p class="content-block"><%= raw @content.find_by(title: 'r2_c3_t').text %><% if user_signed_in? %><a data-id="<%= @content.find_by(title: 'r2_c3_t').id %>" data-text="<%= @content.find_by(title: 'r2_c3_t').text %>" data-toggle="modal" data-target="#edit-content" class="edit-content">edit</a><% end %></p>
+      <a class="user-link" data-toggle="modal" data-target="#subscribe"><h2 class="content-header"><%= raw @content.find_by(title: 'r2_c3_h').text %><% if user_signed_in? %><a data-id="<%= @content.find_by(title: 'r2_c3_h').id %>" data-text="<%= @content.find_by(title: 'r2_c3_h').text %>" data-toggle="modal" data-target="#edit-content" class="edit-content">edit</a><% end %></h2></a>
+        <a class="user-link" data-toggle="modal" data-target="#subscribe"><%= image_tag('subscribe.png', :alt => "Subscribe for updates", :width => "100%", :id => "img-six") %></a>
+      <p class="content-block"><%= raw @content.find_by(title: 'r2_c3_t').text %><% if user_signed_in? %>  <a href="mailto:?bcc=<%= @subscribers %>&subject=Update%20From%20OysterMom%21">Send update to subscribers (admin)</a><a data-id="<%= @content.find_by(title: 'r2_c3_t').id %>" data-text="<%= @content.find_by(title: 'r2_c3_t').text %>" data-toggle="modal" data-target="#edit-content" class="edit-content">edit</a><% end %></p>
     </div>
   </div>
 </div>
@@ -129,7 +129,6 @@
   $(document).on("click", ".edit-content", function () {
     var contentText = $(this).data('text');
     var contentId = $(this).data('id');
-    console.log(contentId);
     $("#content-text-field").val( contentText );
     $("#content-id-field").val( contentId );
   });

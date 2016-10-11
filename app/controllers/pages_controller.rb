@@ -8,6 +8,7 @@ class PagesController < ApplicationController
     @pages = Page.all
     @post = Post.new
     @content = Content.all
+    @subscribers = Subscription.all.map { |s| s.email }.join(";")
   end
   
   def location

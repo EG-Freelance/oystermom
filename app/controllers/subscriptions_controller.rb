@@ -33,7 +33,7 @@ class SubscriptionsController < ApplicationController
           format.html { redirect_to :root }
           format.json { render :show, status: :created, location: @subscription }
         else
-          flash[:alert] = @subscription.errors
+          flash[:alert] = "Please make sure that the email, first name, last name, and location are correct."
           format.html { redirect_to :root }
           format.json { render json: @subscription.errors, status: :unprocessable_entity }
         end

@@ -1,6 +1,6 @@
 <%= simple_form_for(:user, :url => session_path(:user), :class => "special-form") do |f| %>
   <p class="email"> 
-    <%= f.text_field :email, :id => "email", :class => "special-form" %>
+    <%= f.text_field :email, :id => "login-email", :class => "special-form" %>
     <label for="email">Email</label> 
   </p> 
   <p class="password"> 
