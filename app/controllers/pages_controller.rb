@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:confirm]
 
   # GET /pages
   # GET /pages.json
@@ -73,6 +74,20 @@ class PagesController < ApplicationController
       end
     end
   end
+  
+  def confirm
+    if params[:commit] == "Confirm"
+      @post.update(confirmed: true)
+    elsif params[:commit] == "Remove"
+      @post.destroy
+    else
+      puts "ERROR - improper commit"
+    end
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js { }
+    end
+  end
 
   # PATCH/PUT /pages/1
   # PATCH/PUT /pages/1.json
@@ -99,6 +114,11 @@ class PagesController < ApplicationController
   end
 
   private
+  
+    def set_post
+      @post = Post.find(params['post']['id'])
+    end
+  
     # Use callbacks to share common setup or constraints between actions.
     def set_page
       @page = Page.find(params[:id])

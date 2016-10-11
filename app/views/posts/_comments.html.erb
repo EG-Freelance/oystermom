@@ -1,14 +1,21 @@
-<% @posts = Post.all %>
+<% user_signed_in? ? @posts = Post.all : @posts = Post.where(confirmed: true) %>
 
 <h2 style="text-align:center; border-bottom: 1px solid">Comments and reviews</h2>
 <% @posts.each do |p| %>
-  <p style="text-align:left; font-family:verdana"><b><%= p.name.blank? ? "Anonymous" : p.name %></b> <i style="font-size:12px"><%= p.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("%m-%d-%Y") %></i></p>
+  <p style="text-align:left; font-family:verdana">
+    <%= simple_form_for :post, :url => confirm_comment_url, method: :post, :remote => true do |f| %>
+      <b><%= p.name.blank? ? "Anonymous" : p.name %></b> 
+      <i style="font-size:12px"><%= p.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("%m-%d-%Y") %></i>
+      <%= f.hidden_field :id, :value => p.id %>
+      <% if user_signed_in? %> <% if p.confirmed != true %> <%= f.submit "Confirm", :class => "comment-review" %> <% end %> <%= f.submit "Remove", :class => "comment-review" %> <% end %>
+    <% end %>
+  </p>
   <p style="text-align:left"><%= p.text %></p>
   <hr>
   <br>
 <% end %>
 <%= simple_form_for @post, method: :post, :class => "submit-comment", :remote => true do |f| %>
-  <%= f.text_field :name, :placeholder => "Name", :class => "comment-name" %>
-  <%= f.text_area :text, :placeholder => "Comment", :class => "comment-text" %>
-  <%= f.submit "Submit", :class => "comment-submit" %>
+  <%= f.text_field :name, :placeholder => "Name", :class => "comment-name special-form" %>
+  <%= f.text_area :text, :placeholder => "Comment", :class => "comment-text special-form", :style => "min-height:50px" %>
+  <%= f.submit "Submit", :class => "comment-submit special-form", :style => "min-width:25%; width: 100px" %>
 <% end %>

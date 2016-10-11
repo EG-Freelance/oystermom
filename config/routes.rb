@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: "pages#index"
   post "/" => "pages#index"
   post "/update" => "pages#update_content", :as => "update_content"
+  post "/confirm" => "pages#confirm", :as => "confirm_comment"
   #get "/location" => "pages#location", :as => "location"
   #get "/gallery" => "pages#gallery", :as => "gallery"
   #get "/order" => "pages#order", :as => "order"
