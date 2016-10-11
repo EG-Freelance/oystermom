@@ -35,10 +35,10 @@ function ready_f() {
   
   $(window).load(disable_buttons);
   
-  $('#email').change(disable_buttons);
-  $('#first_name').change(disable_buttons);
-  $('#last_name').change(disable_buttons);
-  $('#location').change(disable_buttons);
+  $('#email').keyup(disable_buttons);
+  $('#first_name').keyup(disable_buttons);
+  $('#last_name').keyup(disable_buttons);
+  $('#location').keyup(disable_buttons);
 
   // navigation button
   $('#button1-down').click(function(e){
