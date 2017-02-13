@@ -235,6 +235,13 @@ input:focus :not(.comment-review), textarea:focus :not(.comment-review) {
   height:200px;
 }
 
+.first-section{
+  display:inline-block;
+  background-color:#ddd;
+  width:100%;
+  text-align:center;
+}
+
 .second-section{
   display: inline-block;
 }

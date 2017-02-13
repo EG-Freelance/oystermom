@@ -73,7 +73,12 @@ function ready_f() {
       if($('#arrow').css('transform').split(", ")[1] == "-1"){
         AnimateRotate(270,90);
       }
-    } else if (location < $("#second-section").offset().top) {
+    } else if (location < $("#first-section").offset().top) {
+      target_hash = "#first-section";
+      if($('#arrow').css('transform').split(", ")[1] == "-1"){
+        AnimateRotate(270,90);
+      }
+    } else if (location < $("#second-section").offset().top && location >= $('#first-section').offset().top) {
       target_hash = "#second-section";
       if($('#arrow').css('transform').split(", ")[1] == "-1"){
         AnimateRotate(270,90);
