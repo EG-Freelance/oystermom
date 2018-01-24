@@ -47,7 +47,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 # steve gems
-gem 'unicorn'
+# gem 'unicorn'
+gem 'puma'
 gem 'material_icons'
 group :assets do
   #gem 'jquery-smooth-scroll-rails'
