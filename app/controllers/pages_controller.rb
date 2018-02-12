@@ -9,6 +9,7 @@ class PagesController < ApplicationController
     @post = Post.new
     @content = Content.all
     @subscribers = Subscription.all.map { |s| s.email }.join(";")
+    @images = Image.all
   end
   
   def location

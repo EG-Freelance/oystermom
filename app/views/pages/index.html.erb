@@ -13,8 +13,28 @@
 
 <div class="first-section" id='first-section'>
   <div class="row" style="display: inline">
-    <iframe src="https://player.vimeo.com/video/202679002" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-      <p><a href="https://vimeo.com/202679002">Faces of The Forgotten Coast: Oyster Mom Teaser</a> from <a href="https://vimeo.com/user62413025">Linda Burns</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+    <div class="col-a">
+      <iframe src="https://player.vimeo.com/video/202679002" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <p><a href="https://vimeo.com/202679002">Faces of The Forgotten Coast: Oyster Mom Teaser</a> from <a href="https://vimeo.com/user62413025">Linda Burns</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+    </div>
+    <div class="col-b">
+     
+      <div class="galleria" style="height:360px">
+        <% @images.each do |image| %>
+          <%= image_tag(image.filename.nil? ? image.url : image.filename, data: { title: image.title }) %>
+        <% end %>
+      </div>
+      
+      <script>
+        $(document).ready(function(){
+          (function() {
+            Galleria.loadTheme('assets/galleria.classic.min.js');
+            Galleria.run('.galleria');
+          }());
+        });
+      </script>
+      
+    </div>
   </div>
 </div>
 

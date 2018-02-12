@@ -265,6 +265,18 @@ input:focus :not(.comment-review), textarea:focus :not(.comment-review) {
   margin-right:2.4%;
 }
 
+.col-a {
+  float: left;
+  width: 45%;
+  margin-left: 2.5%;
+}
+
+.col-b {
+  float: right;
+  width: 45%;
+  margin-right: 2.5%;
+}
+
 .third-section{
   display:inline-block;
   background-color:#ddd;
