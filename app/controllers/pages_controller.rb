@@ -13,7 +13,7 @@ class PagesController < ApplicationController
   end
   
   def acme
-    render 'pages/acme'
+    render json: "dDqPsg4EcB1r1DezOtEH0S7IE3VHjKY5b7fCAUrcg2E.Wg6YcgI4pnBYJ1v_VhdaApBCAG7UtzJ5fIWOu_gpWRU"
   end
   
   def location
