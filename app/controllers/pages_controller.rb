@@ -12,6 +12,10 @@ class PagesController < ApplicationController
     @images = Image.all
   end
   
+  def acme
+    render 'pages/acme'
+  end
+  
   def location
   end
   

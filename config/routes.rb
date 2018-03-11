@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post "/" => "pages#index"
   post "/update" => "pages#update_content", :as => "update_content"
   post "/confirm" => "pages#confirm", :as => "confirm_comment"
+  get "/.well-known/acme-challenge/ne5gvXln3I7HBThTKG5I_ZxACgxEYHUfWrpvFS5gGrg" => "pages#acme"
   #get "/location" => "pages#location", :as => "location"
   #get "/gallery" => "pages#gallery", :as => "gallery"
   #get "/order" => "pages#order", :as => "order"
