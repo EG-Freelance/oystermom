@@ -6,7 +6,7 @@
     <%= simple_form_for :post, :url => confirm_comment_url, method: :post, :remote => true do |f| %>
       <b><%= p.name.blank? ? "Anonymous" : p.name %></b> 
       <i style="font-size:12px"><%= p.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("%m-%d-%Y") %></i>
-      <%= f.hidden_field :id, :value => p.id %>
+      <%= f.hidden_field :id, :value => p.id, :id => "post-#{p.id}" %>
       <% if user_signed_in? %> <% if p.confirmed != true %> <%= f.submit "Confirm", :class => "comment-review" %> <% end %> <%= f.submit "Remove", :class => "comment-review" %> <% end %>
     <% end %>
   </p>
