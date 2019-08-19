@@ -17,6 +17,9 @@ Rails.application.configure do
     }
   }
   
+  # Google Analytics
+  GA.tracker = "UA-145968064-1"
+
   # Video JS requirement
   config.assets.precompile += %w( video-js.swf vjs.eot vjs.svg vjs.ttf vjs.woff )
 
