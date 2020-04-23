@@ -2,10 +2,10 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.3'
+gem 'rails', '4.2.8'
 group :development, :test do
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.3.6'
 end
 
 group :production do
@@ -14,6 +14,8 @@ group :production do
   # gem 'thin'
   gem 'rails_12factor'
 end
+
+gem 'json', '>= 1.8'
 
 # Use paperclip for attaching images and videos to posts
 gem 'paperclip', "~> 5.0.0"
