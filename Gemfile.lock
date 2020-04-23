@@ -1128,5 +1128,8 @@ DEPENDENCIES
   videojs_rails
   web-console (~> 2.0)
 
+RUBY VERSION
+   ruby 2.6.4p104
+
 BUNDLED WITH
    1.17.3
