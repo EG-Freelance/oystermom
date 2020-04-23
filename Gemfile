@@ -19,7 +19,7 @@ end
 gem 'json', '>= 1.8'
 
 # Use paperclip for attaching images and videos to posts
-gem 'paperclip', "~> 5.0.0"
+gem 'paperclip', "~> 5.2.0"
 gem 'paperclip-av-transcoder'
 
 # Use blue-imp for photo gallery
